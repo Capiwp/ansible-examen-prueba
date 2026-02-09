@@ -1,6 +1,7 @@
 all:
   hosts:
     web1:
-      ansible_host: 192.168.82.131
+      ansible_host: "{{ lookup('env', 'REMOTE_HOST') | default('192.168.82.131') }}"
+      ansible_port: "{{ lookup('env', 'REMOTE_PORT') | default(22) }}"
       ansible_user: deploy
       ansible_python_interpreter: /usr/bin/python3
