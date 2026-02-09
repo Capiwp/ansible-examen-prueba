@@ -10,7 +10,7 @@
   git:
     repo: 'https://github.com/Capiwp/ansible-examen-prueba.git'
     dest: /home/deploy/apps/myapp
-    version: "{{ git_ref | default('main') }}"
+    version: main
     force: yes
   become: no
 
